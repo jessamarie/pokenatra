@@ -1,0 +1,27 @@
+<div class="trainers">
+  <h2><%= @trainer.name %>  <a href="/trainers/<%= @trainer.id %>/edit">(edit)</a><a
+      href="javascript:{}"
+      onclick="document.getElementById('my_form').submit();"
+      type="submit">(Delete!)
+      </a></h2>
+
+  <form id="my_form" action="/trainers/<%= @trainer.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+  </form>
+
+<img src="<%= @trainer.img_url %>" alt="picture of trainer">
+
+
+  <p><label for="">Level:</label><%= @trainer.level %></p>
+  <!-- <p><label for="">Team: </label><%= @trainer.team_id %></p> -->
+
+  <% @trainer.pokemons.each do |poke|%>
+    <p class="trainers">
+      <%= poke.name %>
+    </p>
+  <% end %>
+
+  <h2><a href="/trainers">All trainers</a></h2>
+
+
+</div>
