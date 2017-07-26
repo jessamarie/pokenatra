@@ -1,18 +1,35 @@
-<h2>Edit Trainer</h2>
+<div class="containareon">
+  <h2>Edit Trainer</h2>
 
-<form action="/trainers/<%= @trainer.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
-  <label>Name: </label>
-  <input type="text" name="trainer[name]" value="<%= @trainer.name %>">
+  <form id="update_trainer" action="/trainers/<%= @trainer.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
 
-  <label>Level: </label>
-  <input type="text" name="trainer[level]" value="<%= @trainer.level %>">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="trainer[name]" value="<%= @trainer.name %>">
+    </div>
 
-  <label>Team_ID: </label>
-  <input type="text" name="trainer[team_id]" value="<%= @trainer.team_id %>">
+    <div>
+      <label >Level: </label>
+      <input type="text" name="trainer[level]" value="<%= @trainer.level %>">
+    </div>
 
-  <label>Image URL: </label>
-  <input type="text" name="trainer[img_url]" value="<%= @trainer.img_url %>">
+    <div>
+      <label>Team_ID: </label>
+      <input type="text" name="trainer[team_id]" value="<%= @trainer.team_id %>">
+    </div>
 
-  <input type="submit" value="Update">
-</form>
+    <div>
+      <label>Image URL: </label>
+      <input type="text" name="trainer[img_url]" value="<%= @trainer.img_url %>">
+    </div>
+  
+    <h2><a
+        href="javascript:{}"
+        onclick="document.getElementById('update_trainer').submit();"
+        type="submit">(Update)
+    </a></h2>
+  </form>
+
+  <a href="/trainers/<%= @trainer.id %>">(Go Back)</a>
+</div>

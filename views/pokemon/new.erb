@@ -1,17 +1,33 @@
-<h2>Create New Pokemon</h2>
+<div class="containareon">
+  <h2>Create Pokemon</h2>
+  <form id="create_pokemon" action="/pokemon" method="post">
 
-<form class="" action="/pokemon" method="post">
-  <label>Name: </label>
-  <input type="text" name="poke[name]">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="poke[name]">
+    </div>
 
-  <label>Type: </label>
-  <input type="text" name="poke[poke_type]">
+    <div>
+      <label>Type: </label>
+      <input type="text" name="poke[poke_type]">
+    </div>
 
-  <label>CP: </label>
-  <input type="text" name="poke[cp]">
+    <div>
+      <label>CP: </label>
+      <input type="text" name="poke[cp]">
+    </div>
 
-  <label>Image URL: </label>
-  <input type="text" name="poke[img_url]">
+    <div>
+      <label>Image URL: </label>
+      <input type="text" name="poke[img_url]">
+    </div>
 
-  <input type="submit" value="Create">
-</form>
+    <h2><a
+        href="javascript:{}"
+        onclick="document.getElementById('create_pokemon').submit();"
+        type="submit">(Create)
+    </a></h2>
+  </form>
+
+  <a href="/pokemon">(Go Back)</a>
+</div>

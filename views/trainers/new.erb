@@ -1,17 +1,33 @@
-<h2>Create New Trainer</h2>
+<div class="containareon">
+  <h2>Create Trainer</h2>
+  <form id="create_trainer" action="/trainers" method="post">
 
-<form class="" action="/trainers" method="post">
-  <label>Name: </label>
-  <input type="text" name="trainer[name]">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="trainer[name]">
+    </div>
 
-  <label>Level: </label>
-  <input type="text" name="trainer[level]">
+    <div>
+      <label>Level: </label>
+      <input type="text" name="trainer[level]">
+    </div>
 
-  <label>Team_ID: </label>
-  <input type="text" name="trainer[team_id]">
+    <div>
+      <label>Team_ID: </label>
+      <input type="text" name="trainer[team_id]">
+    </div>
 
-  <label>Image URL: </label>
-  <input type="text" name="trainer[img_url]">
+    <div>
+      <label>Image URL: </label>
+      <input type="text" name="trainer[img_url]">
+    </div>
 
-  <input type="submit" value="Create">
-</form>
+    <h2><a
+        href="javascript:{}"
+        onclick="document.getElementById('create_trainer').submit();"
+        type="submit">(Create)
+    </a></h2>
+  </form>
+
+  <a href="/trainers">(Go Back)</a>
+</div>

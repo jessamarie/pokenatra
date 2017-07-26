@@ -1,12 +1,19 @@
-<h2><a href="/pokemon">All Pokemon</a></h2>
 <div class="pokemon">
-  <h2><%= @poke.name %> <a href="/pokemon/<%= @poke.id %>/edit">(edit)</a></h2>
-  <img src="<%= @poke.img_url %>" alt="">
-  <p><%= @poke.poke_type %></p>
-  <p><%= @poke.cp %></p>
 
-  <form action="/pokemon/<%= @poke.id %>" method="post">
+  <h2><%= @poke.name %>  <a href="/pokemon/<%= @poke.id %>/edit">(edit)</a><a
+      href="javascript:{}"
+      onclick="document.getElementById('delete_pokemon').submit();"
+      type="submit">(Delete!)
+      </a></h2>
+
+  <form id="delete_pokemon" action="/pokemon/<%= @poke.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input class="button-delete" type="submit" value="Delete!">
   </form>
+
+  <img src="<%= @poke.img_url %>" alt="Picture of Pokemon">
+  <p><label>Type:</label><%= @poke.poke_type %></p>
+  <p><label>CP:</label><%= @poke.cp %></p>
+
+  <h2><a href="/pokemon">All Pokemon</a></h2>
+
 </div>

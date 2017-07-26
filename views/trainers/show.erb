@@ -1,25 +1,40 @@
-<div class="trainers">
+<div class="pokemon">
   <h2><%= @trainer.name %>  <a href="/trainers/<%= @trainer.id %>/edit">(edit)</a><a
       href="javascript:{}"
-      onclick="document.getElementById('my_form').submit();"
+      onclick="document.getElementById('delete_trainer').submit();"
       type="submit">(Delete!)
       </a></h2>
 
-  <form id="my_form" action="/trainers/<%= @trainer.id %>" method="post">
+  <form id="delete_trainer" action="/trainers/<%= @trainer.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
   </form>
 
 <img src="<%= @trainer.img_url %>" alt="picture of trainer">
 
 
-  <p><label for="">Level:</label><%= @trainer.level %></p>
-  <!-- <p><label for="">Team: </label><%= @trainer.team_id %></p> -->
+  <p><label>Level:</label><%= @trainer.level %></p>
+  <!-- <p><label>Team: </label><%= @trainer.team_id %></p> -->
 
+  <p><label>Pokemon:</label></p>
+  <ul>
+    <% @trainer.pokemons.each do |poke| %>
+      <li>
+        <a href="/pokemon/<%= poke.id %>">
+          <%= poke.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <!-- <div>
+  <label>Pokemon:</label>
   <% @trainer.pokemons.each do |poke|%>
     <p class="trainers">
       <%= poke.name %>
     </p>
   <% end %>
+  <div> -->
 
   <h2><a href="/trainers">All trainers</a></h2>
 
